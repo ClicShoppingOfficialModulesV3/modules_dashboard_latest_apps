@@ -46,9 +46,6 @@
 
     public function getOutput()
     {
-      $CLICSHOPPING_Template = Registry::get('TemplateAdmin');
-      $width = MODULE_ADMIN_DASHBOARD_CLICSHOPPING_LASTEST_APPS_CONTENT_WIDTH;
-
       $feed = simplexml_load_string(file_get_contents('https://www.clicshopping.org/forum/files/files.xml/'));
 
       $output = null;
@@ -67,8 +64,8 @@
                     data-mobile-responsive="true">';
       $output .= '<thead class="dataTableHeadingRow">';
       $output .= '<tr>';
-      $output .= '<th data-field="logo" data-switchable="false">' . HTML::image(CLICSHOPPING::link('Shop/images/logo_clicshopping_24.webp'), 'ClicShopping') . '</th>';
-      $output .= '<th data-field="title">' . $this->app->getDef('text_module_admin_dashboard_clicshopping_latest_apps_tilte') . '</th>';
+      $output .= '<th data-field="logo">' . HTML::image(CLICSHOPPING::link('Shop/images/logo_clicshopping_24.webp'), 'ClicShopping') . '</th>';
+      $output .= '<th data-field="title" data-switchable="false">' . $this->app->getDef('text_module_admin_dashboard_clicshopping_latest_apps_tilte') . '</th>';
       $output .= '<th data-field="date" class="text-right">' . $this->app->getDef('text_module_admin_dashboard_clicshopping_latest_apps_date') . '</th>';
       $output .= '</tr>';
       $output .= '</thead>';
@@ -94,7 +91,7 @@
 
       $output .= '<tr>';
       $output .= '<td>' . HTML::button($this->app->getDef('text_module_admin_dashboard_clicshopping_latest_apps_search'), null, CLICSHOPPING::link(null, 'A&Tools\Upgrade&Upgrade'), 'primary', null, 'sm') . '</td>';
-      $output .= '<td></td>';
+      $output .= '<td ></td>';
       $output .= '<td>' . HTML::button($this->app->getDef('text_module_admin_dashboard_clicshopping_latest_apps_join_community'), null,  'https://www.clicshopping.org', 'info', ['params' => 'target="_blank" rel="noreferrer"'], 'sm') . '</td>';
       $output .= '</tr>';
       $output .= '</tbody>';
