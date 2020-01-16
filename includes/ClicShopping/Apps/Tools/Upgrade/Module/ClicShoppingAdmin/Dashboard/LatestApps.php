@@ -81,7 +81,7 @@
         foreach ($item as $value) {
           if (!empty($value->title)) {
             if ($i <= $display_max) {
-              $output .= '<tr>';
+              $output .= '<tr class="backgroundBlank">';
               $output .= '<td>' . $i . '</td>';
               $output .= '<td>' . HTML::link($value->link, $value->title, 'target="_blank" rel="noreferrer"') . '</td>';
               $output .= '<td>' .  DateTime::toShort($value->pubDate) . '</td>';
