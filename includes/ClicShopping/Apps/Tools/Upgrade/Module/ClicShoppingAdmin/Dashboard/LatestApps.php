@@ -80,7 +80,7 @@
             if ($i <= $display_max) {
               $output .= '<tr class="backgroundBlank">';
               $output .= '<td>' . $i . '</td>';
-              $output .= '<td>' . HTML::link($value->link, $value->title, 'target="_blank" rel="noreferrer"') . '</td>';
+              $output .= '<td>' . HTML::link($value->link, $value->title, 'target="_blank" rel="noopener"') . '</td>';
               $output .= '<td>' .  DateTime::toShort($value->pubDate) . '</td>';
               $output .= '</tr>';
             }
@@ -92,7 +92,7 @@
       $output .= '<tr>';
       $output .= '<td>' . HTML::button($this->app->getDef('text_module_admin_dashboard_clicshopping_latest_apps_search'), null, CLICSHOPPING::link(null, 'A&Tools\Upgrade&Upgrade'), 'primary', null, 'sm') . '</td>';
       $output .= '<td ></td>';
-      $output .= '<td>' . HTML::button($this->app->getDef('text_module_admin_dashboard_clicshopping_latest_apps_join_community'), null,  'https://www.clicshopping.org', 'info', ['params' => 'target="_blank" rel="noreferrer"'], 'sm') . '</td>';
+      $output .= '<td>' . HTML::button($this->app->getDef('text_module_admin_dashboard_clicshopping_latest_apps_join_community'), null,  'https://www.clicshopping.org', 'info', ['params' => 'target="_blank" rel="noopener"'], 'sm') . '</td>';
       $output .= '</tr>';
       $output .= '</tbody>';
       $output .= '</table>';
